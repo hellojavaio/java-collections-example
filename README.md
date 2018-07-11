@@ -47,7 +47,7 @@ example for java collections
 
 ##### ConcurrentSkipListSet<E>
 
-- `ConcurrentSkipListSet` 的子实现
+- `ConcurrentSkipListMap` 的子实现
 
 
 
