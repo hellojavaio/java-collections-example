@@ -20,7 +20,7 @@ example for java collections
 
 - `HashSet` 实际上就是 `HashMap` 的键集合
 
-### LinkedHashSet
+#### LinkedHashSet
 
 - `LinkedHashSet` 实际上就是 `LinkedHashMap` 的键集合
 
