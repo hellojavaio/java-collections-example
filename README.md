@@ -1,6 +1,8 @@
 # java-collections-example
 example for java collections
 
+http://www.cs.rochester.edu/u/scott/papers/2009_Scherer_CACM_SSQ.pdf
+
 ---
 
 ## Set
