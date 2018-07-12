@@ -145,6 +145,7 @@ http://www.cs.rochester.edu/u/scott/papers/2009_Scherer_CACM_SSQ.pdf
 #### TransferQueue
 
 - `BlockingQueue` 的子集
+
 - 生产者可以等待消费者接收元素
  
 - `TransferQueue` 可能在例如消息传递应用程序中很有用，其中生产者有时（使用方法转移（`E`））等待消费者调用 `take` 或 `poll` 接收元素，而在其他时候将元素排队（通过方法 `put` ）而不等待接收。 还可以使用 `tryTransfer` 的非阻塞和超时版本。 也可以通过 `hasWaitingConsumer()` 查询 `TransferQueue`，是否有任何线程等待项目，这与窥视操作相反。
