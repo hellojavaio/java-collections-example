@@ -288,3 +288,16 @@ http://www.cs.rochester.edu/u/scott/papers/2009_Scherer_CACM_SSQ.pdf
 - 此类支持用于排序等待生产者和消费者线程的可选公平策略。默认情况下，不保证此顺序。但是，将 `fairness` 设置为 `true` 构造的队列以 `FIFO` 顺序授予线程访问权限。
 
 ### ConcurrentLinkedQueue
+
+- 基于链接节点的无界线程安全队列。此队列命令元素 `FIFO`（先进先出）。队列的头部是队列中最长时间的元素。队列的尾部是队列中最短时间的元素。在队列的尾部插入新元素，队列检索操作获取队列头部的元素。
+当许多线程共享对公共集合的访问权限时，`ConcurrentLinkedQueue`是一个合适的选择。与大多数其他并发集合实现一样，此类不允许使用 `null` 元素。
+该实现采用有效的“无等待”算法，该算法基于 `Maged M.Michael` 和 `Michael L.Scott` 的简单，快速，实用的非阻塞和阻塞并发队列算法中描述的算法。
+
+- 迭代器是弱一致的，在迭代器创建时或之后的某个时刻返回反映队列状态的元素。它们不会抛出 `ConcurrentModificationException`，并且可能与其他操作同时进行。自创建迭代器以来队列中包含的元素将只返回一次。
+
+- 请注意，与大多数集合不同，`size` 方法不是恒定时间操作。由于这些队列的异步性质，确定当前元素数量需要遍历元素，因此如果此集合可能会报告不准确的结果此外，批量操作 `addAll`，`removeAll`，`retainAll`，
+`containsAll`，`equals` 和 `toArray` 不是保证以原子方式执行。例如，与 `addAll` 操作同时运行的迭代器可能只查看一些添加的元素。
+
+- 该类及其迭代器实现了 `Queue` 和 `Iterator` 接口的所有可选方法。
+
+- 内存一致性影响：与其他并发集合一样，在将对象放入 `ConcurrentLinkedQueue` 之前，线程中的操作发生在从另一个线程中的 `ConcurrentLinkedQueue` 访问或删除该元素之后的操作之前。

@@ -8,7 +8,7 @@ public class LinkedTransferQueueExample {
         LinkedTransferQueue<Integer> queue = new LinkedTransferQueue<>();
         new Thread(() -> {
                 try {
-                    Thread.sleep(1500);  // 再改成1500
+                    Thread.sleep(500);  // 再改成1500
                     System.out.println(Thread.currentThread().getName()+"-"+queue.take());
                     System.out.println(Thread.currentThread().getName()+"-"+queue.take());
                     System.out.println(Thread.currentThread().getName()+"-"+queue.take());
