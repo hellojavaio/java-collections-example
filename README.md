@@ -337,3 +337,45 @@ http://www.cs.rochester.edu/u/scott/papers/2009_Scherer_CACM_SSQ.pdf
 - 添加删除都是整体替换整个数组,没有所谓的扩容.
 
 - `ReentrantLock` 实现线程安全
+
+## Map
+
+### HashMap
+
+- 非线程安全
+
+- 初始化可指定大小(工具指定的大小会计算出一个默认的桶的个数,如果没有指定则默认 `16` 个桶)和加载因子.
+
+- 加载因子就是值的总数到达了一定的比例就扩容
+
+- 当链表的长度达到 `8` 的时候转换成红黑树，红黑树的个数少于 `6` 的时候退化成链表
+
+#### LinkedHashMap
+
+- 在添加元素后,添加到链表结构,来保证数据顺序
+
+- 其他见 `HashMap`
+
+### Hashtable
+
+- `synchronized` 线程安全
+
+- 键值对都不允许为 `null`
+
+### IdentityHashMap
+
+
+
+### WeakHashMap
+
+### AbstractMap
+
+#### EnumMap
+
+#### TreeMap
+
+### ConcurrentMap
+
+#### ConcurrentHashMap
+
+#### ConcurrentSkipListMap
