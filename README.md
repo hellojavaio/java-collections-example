@@ -301,3 +301,39 @@ http://www.cs.rochester.edu/u/scott/papers/2009_Scherer_CACM_SSQ.pdf
 - 该类及其迭代器实现了 `Queue` 和 `Iterator` 接口的所有可选方法。
 
 - 内存一致性影响：与其他并发集合一样，在将对象放入 `ConcurrentLinkedQueue` 之前，线程中的操作发生在从另一个线程中的 `ConcurrentLinkedQueue` 访问或删除该元素之后的操作之前。
+
+## List
+
+### ArrayList
+
+- 非线程安全
+
+- 底层结构数组
+
+- 可初始化指定大小, 添加第一个元素之前初始化大小为 `10`
+
+- `int newCapacity = oldCapacity + (oldCapacity >> 1);` 扩容没特殊情况时扩展 `1.5` 倍
+
+### LinkedList
+
+- 非线程安全
+
+- 底层链表结构
+
+### Vector
+
+- `synchronized` 实现线程安全
+
+- 底层结构数组
+
+- 可初始化指定大小, 默认 `10`,可指定扩容量默认 `0`, 即翻倍扩容 `int newCapacity = oldCapacity + ((capacityIncrement > 0) ? capacityIncrement : oldCapacity);`
+
+### CopyOnWriteArrayList
+
+- 底层结构数组
+
+- `setArray(new Object[0])` 初始化默认为 `0` 大小的数组
+
+- 添加删除都是整体替换整个数组,没有所谓的扩容.
+
+- `ReentrantLock` 实现线程安全
