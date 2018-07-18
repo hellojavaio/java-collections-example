@@ -364,18 +364,36 @@ http://www.cs.rochester.edu/u/scott/papers/2009_Scherer_CACM_SSQ.pdf
 
 ### IdentityHashMap
 
+- 键值对都保存在一个数组里面,`0` 和 `1`, `2` 和 `3` ... 这样的位置保存
 
+- 通过 `hash` 运算如果冲突且相等则替换原来的值,或者扩容.
 
 ### WeakHashMap
+
+- 键值对实现了 `WeakReference` ,弱引用,当键 `gc` 的时候会被删除
 
 ### AbstractMap
 
 #### EnumMap
 
+- 键使用的是枚举
+
+- 内置的数组会根据初始化的枚举内部的值数量来初始化数组大小
+
+- 枚举的键值对在数组的下标是枚举的顺序变量
+
 #### TreeMap
+
+- 有序
+
+- 节点红黑树结构
 
 ### ConcurrentMap
 
 #### ConcurrentHashMap
 
+- `CAS` 线程安全,`1.8` 放弃了 `1.7` 的分段加锁设计
+
 #### ConcurrentSkipListMap
+
+- 
