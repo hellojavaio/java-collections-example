@@ -396,4 +396,8 @@ http://www.cs.rochester.edu/u/scott/papers/2009_Scherer_CACM_SSQ.pdf
 
 #### ConcurrentSkipListMap
 
-- 
+- 跳表以空间换时间,平衡了链表和红黑树的特点和缺陷
+
+- `CAS` 保证线程安全,`Comparator` 排序
+
+- [ConcurrentSkipListMap](https://blog.csdn.net/chenssy/article/details/75000701)
